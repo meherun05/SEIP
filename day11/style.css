@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+    float: left;
+    margin-left: 10px;
+}
+
+.div-one{
+    height: 200px;
+    width: 200px;
+    background-color: olive;
+    margin: 100px;
+    transition: 1s;
+}
+
+.div-one:hover{
+    transform: scale(1.5);
+
+}
+.div-two{
+    height: 200px;
+    width: 200px;
+    background-color: darkkhaki;
+    transition: 1s;
+    margin-top: 100px;
+}
+.div-two:hover{
+    /*transform: rotate(45deg);*/
+    /*transform: rotatex(90deg);*/
+    transform: rotatey(90deg);
+}
+
+.div-three{
+    height: 200px;
+    width: 200px;
+    background-color: darkolivegreen;
+    transition: 1s;
+    margin-top: 100px;
+}
+.div-three:hover{
+    transform: translate(80px, -60px);
+}
+.div4{
+    height: 200px;
+    width: 200px;
+    background-color: maroon;
+    margin-top: 100px;
+    transition: 1s;
+
+}
+.div4:hover{
+    /*transform:skew(20deg);*/
+    /*transform:skew(-20deg);*/
+    transform:skewY(20deg);
+}
+
+.div5{
+    height: 200px;
+    width: 200px;
+    background-color: royalblue;
+    /*transition: 1s;*/
+    margin: 100px 0;
+    transform: skewY(45deg);
+
+}
+.div6{
+    height: 200px;
+    width: 200px;
+    background-color: darkcyan;
+    margin: 100px 0;
+    transform: skewY(-45deg);
+
+
+}
+
+.box-1{
+    height: 250px;
+    width: 300px;
+    background-color: teal;
+    margin-top: 150px;
+    animation-name: kisuEkta;
+    animation-duration: 5s;
+    animation-iteration-count: infinite ;
+    animation-delay:2s;
+}
+@keyframes bitm {
+    from{
+        background-color: teal;
+    }
+    to{
+        background-color: darkkhaki;
+    }
+}
+@keyframes kisuEkta {
+    0% {background-color: crimson;}
+    50% {background-color: rebeccapurple;}
+    100% {background-color: teal;}
+}
+.box-2 {
+    height: 450px;
+    width: 600px;
+    background-image: url("img/k.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    animation: imageslider 10s infinite ;
+
+
+}
+@keyframes imageslider {
+    0%{background-image: url("./img/m.jpg")}
+    20%{background-image: url("./img/b.jpg");
+        /*height: 400px;*/
+        /*width: 600px;*/
+    }
+    40%{background-image: url("./img/jj.jpg ")}
+    60%{background-image: url("./img/j.jpg")}
+   100%{background-image: url("./img/y.png")}
+
+}
+.box-3{
+    height: 20px;
+    width: 300px;
+    background-color: #047fff;
+    margin-top: 150px;
+    margin-bottom: 400px ;
+    animation: fan 1ms infinite;
+    border-radius: 10px;
+}
+@keyframes fan {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(345deg);
+    }
+}
+.box-4{
+    margin-top: 20px;
+    height: 400px;
+    width: 225px;
+    background-image: url("./img/gm.png");
+    animation: gm 4s steps(23, start) infinite,
+                movearound 12s steps(69, end) infinite alternate 44ms;
+                animation-direction: normal, alternate;
+
+}
+
+@keyframes movearound {
+    0%{
+        transform: translate(0);
+    }
+    100%{transform: translate(600px)}
+
+}
+@keyframes gm{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -5175px 0;
+    }
+}
