@@ -6,12 +6,13 @@ namespace App\classes;
 
 class Series
 {
-    public $firstNumber,$secondNumber,$result;
+    public $firstNumber,$secondNumber,$result,$option,$odd,$even;
 
     public function __construct($xyz)
     {
         $this->firstNumber=$xyz['first_number'];
         $this->secondNumber=$xyz['second_number'];
+        $this->option=$xyz['Option'];
     }
 
     public function getSeriesResult(){
@@ -40,18 +41,33 @@ class Series
     }
 
     public function getOddEvenResult(){
-        for ($this->firstNumber;$this->firstNumber<=$this->secondNumber;$this->firstNumber++)
-        {
-            if ($this->firstNumber % 2==1)
-            {
-                $this->result .=$this->firstNumber;
-            }
-            if ($this->firstNumber % 2==0)
-            {
-                $this->result .=$this->firstNumber;
-            }
+      if ($this->firstNumber < $this->secondNumber){
+          for ($this->firstNumber;$this->firstNumber<=$this->secondNumber;$this->firstNumber++)
+          {
+              if ($this->option =='Odd'&& $this->firstNumber % 2==1)
+              {
+                  $this->odd .=$this->firstNumber.' ';
+              }elseif ($this->option=='Even' && $this->firstNumber % 2==0)
+              {
+                  $this->even .=$this->firstNumber.' ';
+              }
+          }
+      }else{
+          for ($this->secondNumber;$this->secondNumber<=$this->firstNumber;$this->secondNumber++)
+          {
+              if ($this->option =='Odd'&& $this->secondNumber % 2==1)
+              {
+                  $this->odd .= $this->secondNumber.' ';
+              }elseif ($this->option=='Even' && $this->secondNumber % 2==0)
+              {
+                  $this->even .= $this->secondNumber.' ';
+              }
+          }
+      }
+        if ($this->option=='Odd'){
+            return $this->odd;
+        }else{
+            return $this->even;
         }
-        echo $this->result. ' ';
-        exit();
     }
 }

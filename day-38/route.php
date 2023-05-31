@@ -3,6 +3,7 @@
 require_once 'vendor/autoload.php';
 use App\classes\FullName;
 use App\classes\Series;
+use App\classes\Student;
 
 if (isset($_GET['page']))
 {
@@ -27,5 +28,10 @@ if (isset($_GET['page']))
         $series=new Series($_POST);
         $result=$series->getOddEvenResult();
         include 'pages/series.php';
+    }elseif ($_GET['page']=='add-student'){
+        include 'pages/student.php';
+    }elseif ($_GET['page']=='create-student'){
+       $student = new Student($_POST, $_FILES);
+       $message= $student->addStudent();
     }
 }

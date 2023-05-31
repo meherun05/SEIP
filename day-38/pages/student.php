@@ -6,44 +6,40 @@
             <div class="col-md-6 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="text-center">Series</h2>
+                        <h2 class="text-center">Students Form</h2>
                     </div>
                     <div class="card-body">
-                        <form action="route.php?page=get-series-result" method="post">
+                        <form action="route.php?page=create-student" method="post" enctype="multipart/form-data">
                             <div class="row mb-4">
-                                <label for="" class="col-md-4">First Number</label>
+                                <label for="" class="col-md-4">Name</label>
                                 <div class="col-md-8">
-                                    <input type="number" name="first_number" class="form-control">
+                                    <input type="text" name="name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <label for="" class="col-md-4">second Name</label>
+                                <label for="" class="col-md-4">Phone</label>
                                 <div class="col-md-8">
-                                    <input type="number" name="second_number" class="form-control">
+                                    <input type="number" name="phone" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-4">
-                                    <label for="">Option</label>
+                                    <label for="">Email</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="radio"  value="Odd" name="Option" checked style="margin-right: 2px">Odd
-                                    <input type="radio" value="Even" name="Option" style="margin-right: 2px">Even
+                                    <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <label for="" class="col-md-4">Result</label>
+                                <label for="" class="col-md-4">Image</label>
                                 <div class="col-md-8">
-                                    <textarea name="" id="" cols="30" rows="5" class="form-control"><?php
-                                        echo isset($result) ? $result : ''
-                                        ?>
-                                    </textarea>
+                                    <input type="file" name="image" class="form-control">
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <label for="" class="col-md-4"></label>
                                 <div class="col-md-8">
-                                    <input type="submit" class="btn btn-outline-success" value="Get Result">
+                                    <input type="submit" class="btn btn-outline-success float-end" value="Submit">
                                 </div>
                             </div>
 
