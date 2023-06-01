@@ -13,9 +13,14 @@
     <div class="container">
         <a href="" class="navbar-brand">LOGO</a>
         <ul class="navbar-nav mx-auto">
+            <?php if (isset($_SESSION['id'])){?>
             <li><a href="?page=home" class="nav-link">Home</a></li>
             <li><a href="?page=formPage" class="nav-link">Full Name</a></li>
             <li><a href="?page=series" class="nav-link">Series</a></li>
+            <li><a href="?page=add-student" class="nav-link">Add Student</a></li>
+            <li><a href="?page=manage-student" class="nav-link">Manage Student</a></li>
+            <?php }?>
+            <li><a href="?page=login" class="nav-link">Login</a></li>
         </ul>
     </div>
 </nav>

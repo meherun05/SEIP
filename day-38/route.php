@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php';
 use App\classes\FullName;
 use App\classes\Series;
 use App\classes\Student;
+use App\classes\Auth;
 
 if (isset($_GET['page']))
 {
@@ -33,5 +34,19 @@ if (isset($_GET['page']))
     }elseif ($_GET['page']=='create-student'){
        $student = new Student($_POST, $_FILES);
        $message= $student->addStudent();
+        include 'pages/student.php';
+    }elseif ($_GET['page']=='manage-student')
+    {
+        $student=new Student();
+        $students=$student->getAllStudents();
+        include 'pages/manage-student.php';
+    }elseif ($_GET['page']=='login')
+    {
+        include 'pages/login.php';
+    }elseif ($_GET['page']=='login-submit')
+    {
+        $auth= new Auth($_POST);
+        $message=$auth->login();
+        include 'pages/login.php';
     }
 }

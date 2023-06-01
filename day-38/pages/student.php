@@ -9,6 +9,7 @@
                         <h2 class="text-center">Students Form</h2>
                     </div>
                     <div class="card-body">
+                        <span class="text-success"><?php echo isset($message)? $message:''?></span>
                         <form action="route.php?page=create-student" method="post" enctype="multipart/form-data">
                             <div class="row mb-4">
                                 <label for="" class="col-md-4">Name</label>
